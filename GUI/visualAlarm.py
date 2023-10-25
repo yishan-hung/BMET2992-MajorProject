@@ -7,19 +7,23 @@ def set_led_color(window, led_key, led_id, color):
     canvas = window[led_key]
     canvas.TKCanvas.itemconfig(led_id, fill=color)
 
-# layout = [
-#     [sg.Canvas(size=(150, 150), background_color='white', key='led1')],
-#     [sg.Text('Change circle color to:'), sg.Button('Red'), sg.Button('Blue')]
-# ]
 
-# window = sg.Window('LED Indicator using Canvas', layout, finalize=True)
-
-# # Initially create the LED with red color
-# led_id = create_led(window['led1'], 50, 50, 100, 100, 'red')
-
-# while True:
-#     event, values = window.read()
-#     if event == sg.WIN_CLOSED:
-#         break
-#     if event in ('Blue', 'Red'):
-#         set_led_color(window, 'led1', led_id, event)
+# # [Import Annie's code]
+# # changes the visual alarm color !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# # need to first import BPM values!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!:
+# if 0 <= BPM <= 50: # also need to add status to system log? low pulse
+#     button1_color = ('red')
+#     button2_color = ('grey')
+#     button3_color = ('grey')
+# elif 100 <= BPM <= 160: # high pulse
+#     button1_color = ("grey")
+#     button2_color = ("red")
+#     button3_color = ("grey")
+# elif BPM < 0 or BPM > 160: # poor recording
+#     button1_color = ("grey")
+#     button2_color = ("grey")
+#     button3_color = ("red")
+# else: # normal pulse
+#     button1_color = ("grey")
+#     button2_color = ("grey")
+#     button3_color = ("grey")
